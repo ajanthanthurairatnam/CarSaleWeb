@@ -1,0 +1,107 @@
+﻿@model IEnumerable<CarSales.Models.VehicleAdvertisement>
+
+@{
+    ViewBag.Title = "Index";
+}
+<form method="post">
+
+    <div class="row">
+        <div class="col-md-12">
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.ActionLink("Create New", "Create")
+                </div>
+                <div class="col-md-8">
+                    Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
+                    <input type="submit" id="Search" />
+                </div>
+            </div>
+
+            @foreach (var item in Model)
+            {
+
+                <div class="row" style="border-style: groove;height:250px;">
+                    <div class="col-md-4" style="height:80px">
+                        <img src="~/Content/Image/sample.jpeg" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-2">
+                                ID
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.VehicleAdvertisementNextRefNo)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                Reference No
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.Reference_No)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                Price
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                Body Type
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.BodyType)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                Engine Capacity
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.EngineCapacity)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                AudoMeter
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.AudoMeter)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                Fuel
+                            </div>
+                            <div class="col-md-6">
+                                @Html.DisplayFor(modelItem => item.Fuel)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+</form>
+
+    @*<ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+    </ul>*@

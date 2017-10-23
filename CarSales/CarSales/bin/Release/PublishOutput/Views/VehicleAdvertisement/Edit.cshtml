@@ -1,0 +1,137 @@
+﻿@model CarSales.Models.VehicleAdvertisement
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>VehicleAdvertisement</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.Label("Next Reference No", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => model.VehicleAdvertisementNextRefNo, new { htmlAttributes = new { @readonly = "readonly",@class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.VehicleAdvertisementNextRefNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Your Reference No", htmlAttributes: new { @class = "control-label col-md-2" })
+
+             <div class="col-md-10">
+                @Html.EditorFor(model => model.Reference_No, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Reference_No, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @type = "number", @class = "form-control textAlignRight" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+             @Html.Label("Body Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                  <select class="form-control" id="BodyType" name="BodyType"></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+             @Html.Label("Engine Capacity", htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EngineCapacity, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.ValidationMessageFor(model => model.EngineCapacity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Audo Meter", htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+
+             <div class="col-md-10">
+                @Html.EditorFor(model => model.AudoMeter, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AudoMeter, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fuel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="Fuel" name="Fuel"></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $.get("http://localhost/CarSales/api/config?id=1", function (data) {
+        $('#VehicleAdvertisementNextRefNo').val(data.VehicleAdvertisementNextRefNo);
+    });
+
+    $.get("http://localhost/CarSales/api/VehicleBodies", function (data) {
+        $.each(data, function (key, value) {
+            $("#BodyType").append(
+                $('<option/>', {
+                    html: value.BodyDescription,
+                    value: value.ID
+                })
+            );
+        });
+        $('#BodyType').val(@Model.BodyType).attr("selected", "selected");
+    });
+    $.get("http://localhost/CarSales/api/VehicleFuels", function (data) {
+        $.each(data, function (key, value) {
+            $("#Fuel").append(
+                $('<option/>', {
+                    html: value.FuelType,
+                    value: value.ID
+                })
+            );
+        });
+          $('#Fuel').val(@Model.Fuel).attr("selected", "selected");
+    });
+
+</script>
