@@ -110,11 +110,11 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $.get("http://localhost/CarSales/api/config?id=1", function (data) {
+    $.get("http://35.162.89.207/CarSales/api/config?id=1", function (data) {
         $('#VehicleAdvertisementNextRefNo').val(data.VehicleAdvertisementNextRefNo);
     });
 
-    $.get("http://localhost/CarSales/api/VehicleBodies", function (data) {
+    $.get("http://35.162.89.207/CarSales/api/VehicleBodies", function (data) {
         $.each(data, function (key, value) {
             $("#BodyType").append(
                 $('<option/>', {
@@ -125,7 +125,7 @@
         });
         $('#BodyType').val(@Model.BodyType).attr("selected", "selected");
     });
-    $.get("http://localhost/CarSales/api/VehicleFuels", function (data) {
+    $.get("http://35.162.89.207/CarSales/api/VehicleFuels", function (data) {
         $.each(data, function (key, value) {
             $("#Fuel").append(
                 $('<option/>', {
