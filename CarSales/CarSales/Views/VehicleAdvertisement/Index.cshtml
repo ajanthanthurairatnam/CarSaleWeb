@@ -1,104 +1,101 @@
 ﻿@model IEnumerable<CarSales.Models.VehicleAdvertisement>
-
 @{
     ViewBag.Title = "Index";
 }
-<form method="post">
 
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/common.js"></script>
+<form method="post">
     <div class="row">
         <div class="col-md-12">
-            </div>
         </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    @Html.ActionLink("Create New", "Create")
-                </div>
-                <div class="col-md-8">
-                    Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
-                    <input type="submit" id="Search" />
-                </div>
-            </div>
-
-            @foreach (var item in Model)
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            @Html.ActionLink("Create New", "Create")
+        </div>
+        <div class="col-md-8">
+            Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
+            <input type="submit" id="Search" class="btn btn-sm " />
+        </div>
+    </div>
+    @foreach (var item in Model)
             {
 
-                <div class="row" style="border-style: groove;height:250px;">
-                    <div class="col-md-4" style="height:80px">
-                        <img src="~/Content/Image/sample.jpeg" />
+        <div class="row well-sm" style="height:250px;">
+            <div class="col-md-3" style="height:80px">
+                <img src="~/Content/Image/sample.jpeg" class="content" />
+            </div>
+            <div class="col-md-8 detail">
+                <div class="row" style="display:none">
+                    <div class="col-md-2">
+                        ID
                     </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-2">
-                                ID
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.VehicleAdvertisementNextRefNo)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                Reference No
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.Reference_No)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                Price
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.Price)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                Body Type
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.BodyType)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                Engine Capacity
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.EngineCapacity)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                AudoMeter
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.AudoMeter)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                Fuel
-                            </div>
-                            <div class="col-md-6">
-                                @Html.DisplayFor(modelItem => item.Fuel)
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        @Html.DisplayFor(modelItem => item.VehicleAdvertisementNextRefNo)
                     </div>
                 </div>
-            }
-
+                <div class="row">
+                    <div class="col-md-2 reference">
+                        Reference No
+                    </div>
+                    <div class="col-md-6 reference">
+                        @Html.DisplayFor(modelItem => item.Reference_No)
+                    </div>
+                </div>
+                <div class="row price">
+                    <div class="col-md-2">
+                        Price
+                    </div>
+                    <div class="col-md-6 price">
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Body Type
+                    </div>
+                    <div class="col-md-6">
+                        @Html.DisplayFor(modelItem => item.BodyType)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Engine Capacity
+                    </div>
+                    <div class="col-md-6">
+                        @Html.DisplayFor(modelItem => item.EngineCapacity)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        AudoMeter
+                    </div>
+                    <div class="col-md-6">
+                        @Html.DisplayFor(modelItem => item.AudoMeter)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Fuel
+                    </div>
+                    <div class="col-md-6">
+                        @Html.DisplayFor(modelItem => item.Fuel)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
 </form>
-
-    @*<ul class="pagination">
+@*<ul class="pagination">
         <li><a href="#">1</a></li>
         <li class="active"><a href="#">2</a></li>
         <li><a href="#">3</a></li>
