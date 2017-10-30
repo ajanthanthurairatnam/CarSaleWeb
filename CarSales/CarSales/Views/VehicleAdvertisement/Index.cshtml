@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-8">
             Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
-            <input type="submit" id="Search" class="btn btn-sm " />
+            <input type="submit" id="Search" class="btn btn-sm  btn-success " />
         </div>
     </div>
     @foreach (var item in Model)
@@ -85,9 +85,20 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                       
+                        <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-default">
+                            Edit
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-default">
+                            Details
+                            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                        </a>
+                        <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-default">
+                            Delete
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>
+                         
                     </div>
                 </div>
             </div>

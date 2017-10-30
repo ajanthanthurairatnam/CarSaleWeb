@@ -96,7 +96,10 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index" )" class="btn btn-default">
+        Back to List
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+    </a>
 </div>
 
 @section Scripts {

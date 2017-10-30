@@ -77,6 +77,14 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+ 
+    <a href="@Url.Action("Edit", new { id = Model.ID })" class="btn btn-default">
+        Edit
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    </a>
+   
+    <a href="@Url.Action("Index" )" class="btn btn-default">
+        Back to List
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+    </a>
 </p>
