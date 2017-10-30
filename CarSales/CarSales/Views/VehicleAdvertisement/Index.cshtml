@@ -12,7 +12,11 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            @Html.ActionLink("Create New", "Create")
+           
+            <a href="@Url.Action("Create")" class="btn btn-default">
+                Create New
+                <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+            </a>
         </div>
         <div class="col-md-8">
             Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
