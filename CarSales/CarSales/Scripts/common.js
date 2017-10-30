@@ -4,10 +4,9 @@
         $(this).animate({ width: "500px" }, 'slow');
     });
 
-    $('.content').mouseout(function ()
-     {
+    $('.content').mouseout(function () {
 
-         $(this).animate({width: "200px"}, 'slow');
- 
-     });
+        $(this).animate({ width: "200px" }, 'slow');
+
+    });
 });

@@ -26,12 +26,17 @@ textarea {
 .textAlignRight {
 text-align:right;
 }
-
 /* start vehicle advertisement index*/
 
 .detail {
-    background:#f8f8f8;
-    border: 1px solid #eee;
+    background:#eee no-repeat center;
+    border: 1px solid #ccc;
+    line-height: 1.846;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
 }
 
  .price {

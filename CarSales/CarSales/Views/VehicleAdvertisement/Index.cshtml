@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<CarSales.Models.VehicleAdvertisement>
-
 @{
     ViewBag.Title = "Index";
 }
- 
+
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/common.js"></script>
-
 <form method="post">
-
     <div class="row">
         <div class="col-md-12">
             </div>
@@ -19,20 +16,20 @@
                     @Html.ActionLink("Create New", "Create")
                 </div>
                 <div class="col-md-8">
-                    Search <input type="text" name="SearchText"  value="@Request["SearchText"]" />
-                    <input type="submit" id="Search" class="btn btn-sm " />
+                    Search <input type="text" name="SearchText" value="@Request["SearchText"]" />
+                    <input type="submit" id="Search" />
                 </div>
             </div>
 
             @foreach (var item in Model)
             {
 
-                <div class="row well-sm" style="height:250px;">
-                    <div class="col-md-3" style="height:80px">
-                        <img src="~/Content/Image/sample.jpeg"  class="content"   />
+                <div class="row" style="border-style: groove;height:250px;">
+                    <div class="col-md-4" style="height:80px">
+                        <img src="~/Content/Image/sample.jpeg" />
                     </div>
-                    <div class="col-md-8 detail"   >
-                        <div class="row" style="display:none">
+                    <div class="col-md-8">
+                        <div class="row">
                             <div class="col-md-2">
                                 ID
                             </div>
@@ -41,18 +38,18 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 reference"  >
+                            <div class="col-md-2">
                                 Reference No
                             </div>
-                            <div class="col-md-6 reference"  >
+                            <div class="col-md-6">
                                 @Html.DisplayFor(modelItem => item.Reference_No)
                             </div>
                         </div>
-                        <div class="row price" >
-                            <div class="col-md-2"  >
+                        <div class="row">
+                            <div class="col-md-2">
                                 Price
                             </div>
-                            <div class="col-md-6 price"  >
+                            <div class="col-md-6">
                                 @Html.DisplayFor(modelItem => item.Price)
                             </div>
                         </div>
@@ -99,10 +96,8 @@
                 </div>
             }
 
-
 </form>
-
-    @*<ul class="pagination">
+@*<ul class="pagination">
         <li><a href="#">1</a></li>
         <li class="active"><a href="#">2</a></li>
         <li><a href="#">3</a></li>
