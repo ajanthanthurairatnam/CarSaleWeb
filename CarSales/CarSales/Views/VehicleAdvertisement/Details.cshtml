@@ -4,87 +4,93 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+ 
 
 <div>
-    <h4>VehicleAdvertisement</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VehicleAdvertisementNextRefNo)
-        </dt>
+    <h4 class="page-header">Vehicle Advertisement</h4>
+  
+    <div class="form-horizontal detail">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.VehicleAdvertisementNextRefNo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VehicleAdvertisementNextRefNo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.VehicleAdvertisementNextRefNo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Reference_No)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Reference_No)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Reference_No)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Reference_No)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BodyType)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.BodyType)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BodyType)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BodyType)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EngineCapacity)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EngineCapacity)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EngineCapacity)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EngineCapacity)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AudoMeter)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AudoMeter)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AudoMeter)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AudoMeter)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fuel)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fuel)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fuel)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Fuel)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-    </dl>
-</div>
-<p>
- 
-    <a href="@Url.Action("Edit", new { id = Model.ID })" class="btn btn-default">
-        Edit
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-    </a>
+        </dl>
+        <p>
+
+            <a href="@Url.Action("Edit", new { id = Model.ID })" class="btn btn-default">
+                Edit
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </a>
+
+            <a href="@Url.Action("Index" )" class="btn btn-default">
+                Back to List
+                <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+            </a>
+        </p>
+    </div>
+
+    
    
-    <a href="@Url.Action("Index" )" class="btn btn-default">
-        Back to List
-        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
-    </a>
-</p>
+</div>
+

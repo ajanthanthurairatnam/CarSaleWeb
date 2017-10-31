@@ -1,7 +1,7 @@
 ﻿$(function () {
     $('.content').mouseover(function () {
         $(this).css("cursor", "pointer");
-        $(this).animate({ width: "500px" }, 'slow');
+        $(this).animate({ width: "300px" }, 'slow');
     });
 
     $('.content').mouseout(function () {

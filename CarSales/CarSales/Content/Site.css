@@ -37,6 +37,7 @@ text-align:right;
     -webkit-box-sizing: border-box;
     border-radius: 0;
     box-shadow: none;
+    border-radius:8px;
 }
 
  .price {
